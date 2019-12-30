@@ -4,7 +4,7 @@ done = False
 while not done:
     something = input("Say something: ")
     
-    if something == "\end":
+    if something == "end":
         done = True
     else:
         processedSomething = something.lower()
