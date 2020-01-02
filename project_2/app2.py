@@ -21,20 +21,25 @@ Height: {elevation} m
 
 for index, row in volcanoList.iterrows():
    coordinates = (row.LAT, row.LON)
-   iFrame = folium.IFrame(html.format(name = row.NAME, elevation = row.ELEV),
-      width=200, height=100)
-   volcanoLayer.add_child(folium.Marker(location = coordinates,
+   iFrame = folium.IFrame(html.format(name = row.NAME,
+      elevation = row.ELEV),
+      width=200,
+      height=100)
+   volcanoLayer.add_child(folium.CircleMarker(location = coordinates,
+      radius = 8,
       popup = folium.Popup(iFrame, parse_html = True),
-      icon = folium.Icon(color = getColor(row.ELEV))))
+      fill_color = getColor(row.ELEV),
+      color = "gray",
+      fill_opacity = .75))
 
 populationLayer = folium.FeatureGroup(name = "Population")
 populationLayer.add_child(folium.GeoJson(data = open("world.json",
-   encoding = "utf-8-sig").read(), style_function = 
-      lambda x: {"fillColor" : "green" if x["properties"]["POP2005"] > 25000000
+   encoding = "utf-8-sig").read(),
+   style_function = lambda x: {"fillColor" : "green" if x["properties"]["POP2005"] > 25000000
       else "orange" if x["properties"]["POP2005"] > 10000000
       else "red"}))
 
-map.add_child(volcanoLayer)
 map.add_child(populationLayer)
+map.add_child(volcanoLayer)
 map.add_child(folium.LayerControl())
 map.save("Map1.html")
