@@ -15,7 +15,7 @@ map = folium.Map(location = (33.44, -112.07), tiles="Stamen Terrain")
 featureGroup = folium.FeatureGroup(name = "My Map")
 volcanoList = pandas.read_csv("Volcanoes.txt")
 html = """
-Volcano name:<br><a href="https://www.google.com/search?q=%22{name}%22" target="_blank">{name}</a><br>
+Volcano name:<br><a href="https://www.google.com/search?q={name}+volcano" target="_blank">{name}</a><br>
 Height: {elevation} m
 """
 
