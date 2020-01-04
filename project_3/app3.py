@@ -2,13 +2,13 @@ import time
 from datetime import datetime as dateTime
 
 hostTemp = "hosts"
-hostPath = "C:\\Windows\\System32\\drivers\\etc"
+hostPath = "C:\\Windows\\System32\\drivers\\etc\\hosts"
 redirect = "127.0.0.1"
 websiteList = ["www.facebook.com", "facebook.com",
    "www.youtube.com", "youtube.com"]
 
 workingHoursStart = 10
-workingHoursEnd = 12
+workingHoursEnd = 17
 
 while True:
    year = dateTime.now().year
