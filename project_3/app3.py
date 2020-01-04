@@ -7,22 +7,24 @@ redirect = "127.0.0.1"
 websiteList = ["www.facebook.com", "facebook.com",
    "www.youtube.com", "youtube.com"]
 
-workingHoursStart = 10
-workingHoursEnd = 17
+workingHoursStart = [10, 13, 16, 20]
+workingHoursEnd = [12, 15, 18, 21]
 
 while True:
    year = dateTime.now().year
    month = dateTime.now().month
    day = dateTime.now().day
 
-   if (dateTime(year, month, day, workingHoursStart) < dateTime.now()
-         < dateTime(year, month, day, workingHoursEnd)):
+   
+   if any(dateTime(year, month, day, start)
+         < dateTime.now()
+         < dateTime(year, month, day, end) for start, end in zip(workingHoursStart, workingHoursEnd)):
       with open(hostPath, "r+") as file:
          content = file.read()
          for website in websiteList:
             if not website in content:
                file.write(redirect + " " + website + "\n")
-      print("Working hours...")
+      print("Working hours..")
    else:
       with open(hostPath, "r+") as file:
          content = file.readlines()
@@ -31,6 +33,5 @@ while True:
             if not any(website in line for website in websiteList):
                file.write(line)
          file.truncate()
-      print("Fun Hours...")
-
+      print("Not Working hours..")
    time.sleep(5)   
