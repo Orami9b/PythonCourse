@@ -7,4 +7,4 @@ def home():
    return "Website content goes here!"
 
 if __name__ == "__main__":
-   application.run(debug = true)
+   application.run(debug = True)
