@@ -1,14 +1,15 @@
 import time
 from datetime import datetime as dateTime
 
-hostTemp = "hosts"
+hostTemp = ("C:\\Users\\oscar\\Desktop\\Programming\\Python\\Ultimate Course"
+            "\\Workspace\\project_3\\hosts")
 hostPath = "C:\\Windows\\System32\\drivers\\etc\\hosts"
 redirect = "127.0.0.1"
 websiteList = ["www.facebook.com", "facebook.com",
    "www.youtube.com", "youtube.com"]
 
-workingHoursStart = [10, 13, 16, 20]
-workingHoursEnd = [12, 15, 18, 21]
+workingHoursStart = [0, 10, 13, 16, 20]
+workingHoursEnd = [2, 12, 15, 18, 21]
 
 while True:
    year = dateTime.now().year
