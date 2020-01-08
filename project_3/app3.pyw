@@ -5,8 +5,7 @@ hostTemp = ("C:\\Users\\oscar\\Desktop\\Programming\\Python\\Ultimate Course"
             "\\Workspace\\project_3\\hosts")
 hostPath = "C:\\Windows\\System32\\drivers\\etc\\hosts"
 redirect = "127.0.0.1"
-websiteList = ["www.facebook.com", "facebook.com",
-   "www.youtube.com", "youtube.com"]
+websiteList = ["www.reddit.com", "reddit.com"]
 
 workingHoursStart = [0, 10, 13, 16, 20]
 workingHoursEnd = [2, 12, 15, 18, 21]
