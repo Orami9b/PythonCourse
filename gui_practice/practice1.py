@@ -4,4 +4,4 @@ window = tk.Tk()
 
 button1 = tk.Button(window)
 
-window.mainloop()git remote add origin
+window.mainloop()
