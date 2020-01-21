@@ -10,7 +10,7 @@ def connect():
          title  TEXT,
          author TEXT,
          year   INTEGER,
-         isbn   INTEGER,
+         isbn   TEXT,
          UNIQUE(title, isbn));""")
    connect.commit()
    connect.close()
